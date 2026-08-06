@@ -8,7 +8,13 @@
 - Namespaces seguem o padrão: `AquaMarket.{Camada}`
 - O domínio (`AquaMarket.Domain`) nunca referencia frameworks externos (EF Core, ASP.NET, etc.)
 - Testes são obrigatórios para todo caso de uso e regra de domínio
-- Conventional Commits em todas as mensagens de commit
+- Conventional Commits em todas as mensagens de commit (`<tipo>(<escopo>): <descrição em PT-BR>`). Tipos: `docs`, `feat`, `fix`, `test`, `refactor`, `chore`
+- Momentos de commit:
+  - `docs(spec)`: ao criar/aprovar uma Spec
+  - `docs(plan)`: ao gerar um Plano de Implementação
+  - `feat/refactor/fix`: ao concluir e aprovar cada etapa de código no code review
+  - `test`: ao escrever a suíte de testes de uma funcionalidade
+  - `chore`: ao finalizar e aprovar 100% dos testes e a Spec
 - Sempre usar `DateTimeOffset` — nunca `DateTime`
 - IDs são sempre `Guid` gerados via `Guid.NewGuid()`, abstraídos por um helper `IdGenerator.NewId()` no Domain
 - Padrão CQRS: Commands (escrita) e Queries (leitura) são sempre separados
